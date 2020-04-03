@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 namespace TemaPIU1
 {
     [Flags]
+    public enum Dotari
+    {
+        WIFI=1,
+        Parcare=2,
+        Restaurant=4
+    }
     public enum Climat
     {
         Mediteranian = 1,

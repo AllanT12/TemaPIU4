@@ -8,14 +8,14 @@ namespace TemaPIU1
 {
     public class Utilizator
     {
-        string Prenume;
-        int Buget;
         public Distanta Distanta
         {
             get;
             set;
         }
         public string Nume { get; set; }
+        public string Prenume { get; set; }
+        public int Buget { get; set; }
         public static int IdUltimUtilizator { get; set; } = 0;
         public Utilizator(string _Nume,string _Prenume,int _Buget)
         {
@@ -40,7 +40,7 @@ namespace TemaPIU1
             else
                 return"utilizatorul "+Nume+ " are mai multi bani";
         }
-        //
+        //Lab 5
         public string ConversieLaSir_PentruFisier()
         {
             string s = string.Format("{0} {1} {2}",Nume,Prenume,Buget);

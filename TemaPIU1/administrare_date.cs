@@ -19,15 +19,27 @@ namespace TemaPIU1
         }
         public void AddUtilizator(Utilizator u)
         {
-            
-           
-
                 using (StreamWriter swFisierText = new StreamWriter("user.txt", true))
                 {
                     swFisierText.WriteLine(u.ConversieLaSir_PentruFisier());
                 }
             
            
+        }
+        public void UpdateUtilizator(Utilizator[] u,int nr)
+        {
+            var encoding = Encoding.UTF8;
+            using (var stream = new FileStream("user.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
+            {
+
+                stream.Position =0;
+                using (var writer = new StreamWriter(stream, encoding))
+                {
+                    for(int z=0;z<=nr;z++)
+                    writer.Write(u[z].ConversieLaSir_PentruFisier());
+                }
+                    
+            }
         }
         public Utilizator[] GetUtilizator(out int nrUtilizator)
         {

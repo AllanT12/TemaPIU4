@@ -17,7 +17,11 @@ namespace TemaPIU1
             set;
             get;
         }
-
+        public Dotari Dotari
+        {
+            get;
+            set;
+        }
       
         public Sejur(string _Tara, string _Oras, string _pret)
         {

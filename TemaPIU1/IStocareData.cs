@@ -10,5 +10,6 @@ namespace TemaPIU1
     {
         void AddUtilizator(Utilizator u);
         Utilizator[] GetUtilizator(out int nrUtilizatori);
+        void UpdateUtilizator(Utilizator[] u,int nr);
     }
 }

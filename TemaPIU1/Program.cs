@@ -18,18 +18,20 @@ namespace TemaPIU1
             Random rnd = new Random();
             int i = rnd.Next(1, 4);//1->3
             Sejur T1 = new Sejur("Romania", "Bucurest", 500);
-            T1.Climat =(Climat)1;//
+            T1.Climat =(Climat)1;//lab5
+            T1.Dotari = (Dotari)3;//lab 5
+            Console.WriteLine(Convert.ToString(T1.Dotari));
             Sejur T2 = new Sejur("Italia", "Roma", 1000);
-            T2.Climat = (Climat)1;//
+            T2.Climat = (Climat)1;//lab 5
             Sejur T3 = new Sejur("Spania", "Madrid", 1500);
-            T3.Climat = (Climat)3;//
+            T3.Climat = (Climat)3;//lab 5
             //nou
             AfisareUtilizatori(utilizators, nrUtilizatori);
             Utilizator U = new Utilizator("Tanasa", "Alin", 1000);
             utilizators[nrUtilizatori] = U;
             nrUtilizatori++;
             Console.WriteLine("Felicitari!");
-            Console.WriteLine(U);
+            Console.WriteLine(U.Nume);
             Console.WriteLine("Ati castigat un sejur la:");
             if (i == 1)
             { string s1 = T1.Afisare(); Console.WriteLine(s1); }
@@ -66,16 +68,16 @@ namespace TemaPIU1
             int optiune= Convert.ToInt32(Console.ReadLine());
             U.Distanta = (Distanta)optiune;
             //lab 5 ex 3
-            Console.WriteLine("numele");
-            nume = Console.ReadLine();
-            foreach (var utilizator in utilizators)
+            Console.WriteLine("pe cine vreti sa gasiti");
+            string nume = Console.ReadLine();
+            for(int f=0;f<nrUtilizatori;f++)
             {
-                if (utilizator.Nume == nume)
+                if (utilizators[f].Nume == nume)
                 {
                     Console.WriteLine("buget nou");
                     int bug =Convert.ToInt32(Console.ReadLine());
-                    utilizator.SetBuget(bug);
-                    
+                    utilizators[f].Buget = bug;
+                    adminUser.UpdateUtilizator(utilizators,f);
                 }
             }
             Console.ReadKey();
